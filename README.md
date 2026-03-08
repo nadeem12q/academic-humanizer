@@ -1,11 +1,11 @@
 # Academic Humanizer 🎓
 > *Elevating AI Drafts to Academic Excellence with Integrity*
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
 [![Category](https://img.shields.io/badge/category-Writing--Utility-green.svg)]()
-[![Optimization](https://img.shields.io/badge/optimization-Academic--First-orange.svg)]()
+[![Focus](https://img.shields.io/badge/focus-Academic--Only-red.svg)]()
 
-**Academic Humanizer** is an advanced AI writing editor skill designed to identify, remove, and rewrite obvious signs of AI-generated text. While it excels at humanizing all types of writing, it is **heavily optimized for academic integrity**, including essays, research papers, reports, and theses.
+**Academic Humanizer** is an advanced AI writing editor skill designed to identify, remove, and rewrite obvious signs of AI-generated text. It is **built exclusively for academic writing** — essays, research papers, reports, theses, and dissertations. No casual, no creative — pure academic focus.
 
 This skill is a heavily modified and expanded version of the original [Humanizer](https://github.com/blader/humanizer) by [blader](https://github.com/blader), tailored specifically for tone preservation and adding "soul" to sterile AI outputs without compromising professional standards.
 
@@ -25,8 +25,9 @@ This skill is a heavily modified and expanded version of the original [Humanizer
 
 ### 🔍 Detection & Quality
 - **29 AI Patterns:** Scans for "pivotal", "delve", "testament", and 26 other common AI tells.
+- **Field-Specific Buzzwords:** Dedicated AI word lists for CS, Business, Psychology, and Medical fields.
+- **Anti-Repetition Engine:** No word (except technical terms) appears more than 2x per 100 words.
 - **Semantic Anchor Check:** Ensures logical paragraph connectivity to prevent topic drift.
-- **Multi-Lingual Auditing:** Internal prompts double-check tone consistency in real-time.
 
 ### 🚀 Deep Rewrite Mode (v2.0.0 — Game Changer)
 - **Full Content Regeneration:** Doesn't just polish — completely regenerates text from extracted concepts and sources.
@@ -86,6 +87,12 @@ To use this skill locally in your AI CLI or agent environments (like Claude Code
 ---
 
 ## 📜 Update History
+
+### v2.1.0 - Academic-Only Refocus
+- **🎯 Academic-Only:** Removed all casual/creative sections. 100% academic focus.
+- **📚 Field-Specific Buzzwords:** AI word lists for CS, Business, Psychology, and Medical.
+- **🚀 Deep Rewrite Full Example:** Complete before/after walkthrough of Deep Rewrite Mode.
+- **🔁 Anti-Repetition Engine:** Prevents word repetition detection trigger.
 
 ### v2.0.0 - Deep Rewrite Mode (Major Release)
 - **🚀 Deep Rewrite Mode:** Full content regeneration for 100% AI text while preserving sources and concepts.
