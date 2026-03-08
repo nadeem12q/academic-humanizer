@@ -1,7 +1,7 @@
 # Academic Humanizer 🎓
 > *Elevating AI Drafts to Academic Excellence with Integrity*
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
 [![Category](https://img.shields.io/badge/category-Writing--Utility-green.svg)]()
 [![Optimization](https://img.shields.io/badge/optimization-Academic--First-orange.svg)]()
 
@@ -28,6 +28,12 @@ This skill is a heavily modified and expanded version of the original [Humanizer
 - **Semantic Anchor Check:** Ensures logical paragraph connectivity to prevent topic drift.
 - **Multi-Lingual Auditing:** Internal prompts double-check tone consistency in real-time.
 
+### 🚀 Deep Rewrite Mode (v2.0.0 — Game Changer)
+- **Full Content Regeneration:** Doesn't just polish — completely regenerates text from extracted concepts and sources.
+- **Source Preservation:** Locks all citations, data, and technical terms before regeneration.
+- **Assignment Integration:** Accepts user-provided guidelines (word count, rubric, citation style) for tailored output.
+- **Dual Mode System:** Automatically selects Standard Mode (light polish) or Deep Rewrite (full regeneration) based on how AI-heavy the input is.
+
 ---
 
 ## 🛠️ The Humanization Pipeline
@@ -36,14 +42,20 @@ The Academic Humanizer follows a highly systematic **9-Step Process** to ensure 
 
 ```mermaid
 graph TD
-    A[Context Detection] --> B[Pattern Identification]
-    B --> C[Drafting & Rewrite]
-    C --> D[Burstiness & Perplexity Pass]
-    D --> E[Quality Check]
-    E --> F[Self-Audit / Anti-AI Pass]
-    F --> G[Final Revision]
-    G --> H[Final Tone Check]
-    H --> I[Final Humanized Output]
+    START{Input Text} --> MODE{"AI-Heavy?"}
+    MODE -->|Light AI| STD[Standard Mode]
+    MODE -->|Heavy/100% AI| DEEP[Deep Rewrite Mode]
+    DEEP --> P1["Phase 1: Extract Sources & Data"]
+    P1 --> P2["Phase 2: Regenerate Content"]
+    P2 --> P3["Phase 3: Apply 29 Patterns"]
+    P3 --> P4["Phase 4: User Guidelines"]
+    STD --> S1[Pattern Identification]
+    S1 --> S2[Rewrite & Burstiness]
+    S2 --> QC[Quality Check]
+    P4 --> QC
+    QC --> AUDIT[Self-Audit / Anti-AI Pass]
+    AUDIT --> TONE[Final Tone Check]
+    TONE --> OUTPUT[Final Humanized Output]
 ```
 
 ---
@@ -75,6 +87,12 @@ To use this skill locally in your AI CLI or agent environments (like Claude Code
 
 ## 📜 Update History
 
+### v2.0.0 - Deep Rewrite Mode (Major Release)
+- **🚀 Deep Rewrite Mode:** Full content regeneration for 100% AI text while preserving sources and concepts.
+- **🎯 Dual Mode System:** Automatic selection between Standard Mode and Deep Rewrite Mode.
+- **📝 User Guidelines Integration:** Accept assignment requirements (word count, rubric, citation style).
+- **✅ Capability Comparison:** Updated disclaimer with honest Standard vs Deep Rewrite comparison table.
+
 ### v1.1.0 - Anti-Detection & Integrity Update
 - **🚀 Burstiness Engine:** Mandatory sentence length variation for detector evasion.
 - **🛡️ Integrity Shield:** "No Fake Citations" rule implemented.
@@ -86,10 +104,18 @@ To use this skill locally in your AI CLI or agent environments (like Claude Code
 
 ## ⚠️ The Reality of AI Detectors
 
-No humanizer tool can guarantee a 100% bypass of AI detectors (like GPTZero, Turnitin, or Originality.ai). 
-- **Detectors Evolve:** What bypasses them today might get flagged tomorrow.
-- **False Positives:** Human writing is frequently flagged as AI.
-- **Best Practice:** Use this tool as an *assistant*, not a replacement. Always add your unique voice and review outputs for institutional policy alignment.
+No humanizer tool can guarantee a 100% bypass of AI detectors (like GPTZero, Turnitin, or Originality.ai).
+
+| Capability | Standard Mode | Deep Rewrite Mode |
+|:---|:---:|:---:|
+| Remove AI vocabulary | ✅ | ✅ |
+| Fix sentence patterns | ✅ | ✅ |
+| Preserve citations/sources | ✅ | ✅ |
+| Regenerate content structure | ❌ | ✅ |
+| Break statistical patterns | ⚠️ Partial | ✅ |
+| Handle 100% AI text | ⚠️ Limited | ✅ |
+
+- **Best Practice:** Use Deep Rewrite for heavy AI content. Always add your own voice and review outputs for institutional policy alignment.
 
 ---
 

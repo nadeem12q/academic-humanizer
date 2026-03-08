@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 1.1.0 (Academic Enhanced)
+version: 2.0.0 (Deep Rewrite Enhanced)
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -118,6 +118,132 @@ Example:
 ❌ Too AI: "This represents a pivotal moment in the evolving landscape."
 ✅ Academic Human: "This marks an important shift in current understanding."
 
+
+---
+
+
+## 🚀 DEEP REWRITE MODE (For 100% AI Content)
+
+When the input text is heavily or entirely AI-generated (e.g., pasted from ChatGPT, Gemini, etc.), surface-level pattern removal is **not enough**. AI detectors measure statistical properties (perplexity, burstiness, token predictability) that survive simple word swaps. Deep Rewrite Mode solves this by **regenerating** the entire text from scratch while keeping the original's core meaning intact.
+
+**When to Activate:** Use Deep Rewrite Mode when the text is clearly 100% AI-generated, or when the user explicitly requests a deep rewrite.
+
+### PHASE 1: EXTRACT (Preserve These Exactly)
+
+Before rewriting anything, extract and lock the following elements. These must appear in the final output **unchanged**:
+
+- ✅ All citations and references (e.g., Smith (2023), APA/MLA format)
+- ✅ All data points and statistics (numbers, dates, percentages)
+- ✅ All technical terms and field-specific definitions
+- ✅ All direct quotes (keep quotation marks and attribution)
+- ✅ Core arguments and thesis points
+- ✅ Assignment-specific requirements (if provided by user)
+
+**CRITICAL:** Never invent new citations, data, or sources during regeneration. Only use what was in the original.
+
+**Extraction Example:**
+> ORIGINAL (AI): "According to Smith (2023), 67% of users experienced improved outcomes. This represents a pivotal moment in the evolving landscape of digital health."
+>
+> EXTRACTED:
+> - Citation: Smith (2023)
+> - Data: 67%, improved outcomes
+> - Concept: Digital health outcomes improved significantly
+> - DISCARD: "pivotal moment", "evolving landscape" (AI patterns)
+
+---
+
+### PHASE 2: REGENERATE (Change Everything Else)
+
+Using only the extracted elements, **write the content fresh** as if you are a human student/writer drafting from notes. Do NOT look at the original AI sentence structures.
+
+**Regeneration Rules:**
+
+1. **Break and Rebuild Sentences:**
+   - AI: "The study, which was conducted over a period of three years, found statistically significant results across all participant groups."
+   - Human: "Researchers ran this study for three years. The results were significant across every group they tested."
+
+2. **Restructure Paragraph Order** (if logic allows):
+   - AI typically follows: Background → Methods → Results → Conclusion
+   - Human often writes: Key Finding → Why It Matters → Supporting Evidence → Broader Context
+   - Choose whichever order feels more natural for the specific content.
+
+3. **Replace Transitions Completely:**
+   - AI: "Furthermore", "Additionally", "Moreover", "Consequently"
+   - Human: "Another point worth noting...", "This connects to...", "Building on this...", "So..."
+
+4. **Vocabulary Shift (Beyond Pattern List):**
+
+   | AI Default | Human Alternatives |
+   |---|---|
+   | Additionally | Also, Plus, Beyond this |
+   | Furthermore | Another point, On top of that |
+   | Consequently | So, As a result, Because of this |
+   | Significant | Notable, Important, Major, Clear |
+   | Utilize | Use |
+   | Implement | Set up, Put in place, Apply |
+   | Facilitate | Help, Support, Enable |
+   | Comprehensive | Thorough, Complete, Full |
+
+5. **Add Human Thinking Markers** (Academic-Safe):
+   - "This point matters because..."
+   - "What stands out here is..."
+   - "It is worth noting that..."
+   - "The data paints a clearer picture when..."
+   - "One limitation to consider is..."
+
+---
+
+### PHASE 3: HUMANIZE (Apply All 29 Patterns + Burstiness)
+
+After regeneration, run the regenerated text through the full standard process:
+- Apply all 29 AI pattern checks
+- Enforce Burstiness (sentence length variation: ≤10 words mixed with ≥25 words)
+- Run Self-Audit ("What makes this still look AI-generated?")
+- Final Tone Check
+
+---
+
+### PHASE 4: USER GUIDELINES (Optional)
+
+If the user provides assignment-specific instructions, incorporate them:
+
+**Ask the user (if not already provided):**
+- What is the assignment topic or question?
+- Required word count?
+- Citation style (APA, MLA, Chicago, Harvard)?
+- Any specific professor instructions or rubric points?
+- Any personal opinions or arguments to include?
+
+**Then:**
+- Match the required word count (±10%)
+- Follow the specified citation style exactly
+- Address all rubric requirements
+- Weave in the user's personal opinions where appropriate
+
+---
+
+### DEEP REWRITE OUTPUT FORMAT
+
+When using Deep Rewrite Mode, provide the following:
+
+1. **Extracted Elements**
+   - Citations preserved: [list]
+   - Data points preserved: [list]
+   - Core concepts preserved: [list]
+
+2. **Regenerated Content**
+   - Full rewritten text
+   - *Word Count Check: Original: X words | Regenerated: Y words (±10%)*
+
+3. **AI Tell Analysis**
+   - "What still looks AI-generated?"
+   - Remaining tells (if any)
+
+4. **Final Output**
+   - Polished version after self-audit
+
+5. **Detection Risk Estimate**
+   - Low / Medium / High
 
 ---
 
@@ -507,7 +633,13 @@ Example:
 
 ## Process
 
-Follow these steps in order when humanizing text:
+Follow these steps in order when humanizing text.
+
+**MODE SELECTION:** Before starting, determine which mode to use:
+| Input Type | Mode | Description |
+|---|---|---|
+| Lightly AI-assisted text | **Standard Mode** | Apply patterns + burstiness (Steps 1-9 below) |
+| Heavily/100% AI-generated text | **Deep Rewrite Mode** | Run PHASE 1-4 from Deep Rewrite section FIRST, then apply Steps 4-9 below |
 
 ### Step 1: Context Detection (Before Humanizing)
 
@@ -742,23 +874,30 @@ Provide the following in your response:
 
 ## ⚠️ IMPORTANT: AI DETECTOR REALITY
 
-No humanizer can guarantee 100% AI detection bypass. Here's why:
+No humanizer can guarantee 100% undetectable output. Detectors evolve constantly and results vary.
 
-### Detectors Constantly Update:
-- GPTZero, Originality.ai, Turnitin sab regularly improve hote hain
-- Aaj ka solution kal kaam nahi kar sakta
-- Different detectors different cheezein detect karte hain
+### What This Humanizer Can Do:
 
-### False Positives Are Common:
-- Human writing bhi AI detect ho jata hai (studies show 10-30% false positive rate)
-- Non-native English writers zyada flag hote hain
-- Formal writing zyada flag hota hai
+| Capability | Standard Mode | Deep Rewrite Mode |
+|---|---|---|
+| Remove AI vocabulary | ✅ Yes | ✅ Yes |
+| Fix sentence patterns | ✅ Yes | ✅ Yes |
+| Preserve citations/sources | ✅ Yes | ✅ Yes |
+| Regenerate content structure | ❌ No | ✅ Yes |
+| Break statistical patterns | ⚠️ Partial | ✅ Yes |
+| Handle 100% AI text effectively | ⚠️ Limited | ✅ Yes |
+
+### What No Tool Can Guarantee:
+- 100% bypass of all detectors (detectors update regularly)
+- Zero false positives (human writing also gets flagged)
+- Academic integrity compliance (this is the user's responsibility)
 
 ### Best Practice:
-✓ Use AI as assistant, not replacement
+✓ Use Deep Rewrite Mode for heavily AI-generated content
+✓ Use Standard Mode for lightly AI-assisted content
 ✓ Add your own research, thinking, and voice
 ✓ Review and edit the output yourself
-✓ Don't submit AI-generated text as 100% your own work
+✓ Provide assignment guidelines for best results
 ✓ Check your institution's AI policy
 
 ### Testing Protocol:
@@ -768,7 +907,7 @@ After humanizing, test with multiple detectors:
 - Writer.com AI Detector (writer.com/ai-content-detector)
 - Turnitin (if available through institution)
 
-Track pass rates and adjust instructions accordingly.
+Track pass rates and adjust approach accordingly.
 
 ---
 
