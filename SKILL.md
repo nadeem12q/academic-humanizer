@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 2.1.0 (Academic-Only Enhanced)
+version: 2.1.1 (Detection Hotfix)
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -176,6 +176,14 @@ Using only the extracted elements, **write the content fresh** as if you are a h
    - "It is worth noting that..."
    - "The data paints a clearer picture when..."
    - "One limitation to consider is..."
+
+6. **🚨 STRICT ANTI-REGRESSION RULES 🚨**
+   When generating the new text, you (the AI) will naturally try to revert to your default "essay" generation style. **YOU MUST ACTIVELY PREVENT THIS.**
+   - **NO Rule of Three:** Do not use list structures in sentences (e.g., "how X is perceived, how Y is expressed, and how Z is interpreted").
+   - **NO Appositive Definitions:** Do not define common terms inline (e.g., "Cultural competence, broadly defined as X, has become...").
+   - **NO "Not X, but Y" Construction:** Avoid negative parallelism (e.g., "rather than an optional investment, it is a practical requirement").
+   - **NO Broad/Sweeping Openers:** Start directly with the core argument. Do NOT write "In today's globalized world" or "Companies that operate across borders face a challenge..."
+   - **NO Em Dash Overuse:** Limit em dashes (—) to a maximum of 1 per 500 words.
 
 ---
 
