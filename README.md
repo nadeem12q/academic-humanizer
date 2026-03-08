@@ -1,30 +1,61 @@
 # Academic Humanizer 🎓
+> *Elevating AI Drafts to Academic Excellence with Integrity*
 
-**Academic Humanizer** is an advanced AI writing editor skill designed to identify, remove, and rewrite obvious signs of AI-generated text. While it excels at humanizing all types of writing, it is **heavily optimized for academic writing**, including essays, research papers, reports, and theses.
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
+[![Category](https://img.shields.io/badge/category-Writing--Utility-green.svg)]()
+[![Optimization](https://img.shields.io/badge/optimization-Academic--First-orange.svg)]()
 
-This skill is a heavily modified and expanded version of the original [Humanizer](https://github.com/blader/humanizer) by [blader](https://github.com/blader), tailored specifically for academic integrity, tone preservation, and adding "soul" to sterile AI outputs.
+**Academic Humanizer** is an advanced AI writing editor skill designed to identify, remove, and rewrite obvious signs of AI-generated text. While it excels at humanizing all types of writing, it is **heavily optimized for academic integrity**, including essays, research papers, reports, and theses.
 
+This skill is a heavily modified and expanded version of the original [Humanizer](https://github.com/blader/humanizer) by [blader](https://github.com/blader), tailored specifically for tone preservation and adding "soul" to sterile AI outputs without compromising professional standards.
 
 ---
 
 ## ✨ Key Features & Enhancements
 
-- **🎓 Academic Mode (New):** Specialized rules to preserve citations (APA, MLA, etc.), technical terminology, legitimate hedging (e.g., "suggests that"), and passive voice common in scientific methods sections.
-- **🧠 Personality & Soul Injection:** Doesn't just strip out AI words; it teaches the AI how to vary rhythm, acknowledge complexity, and sound genuinely human without losing professionalism.
-- **🔍 29 AI Detection Patterns:** Expands upon the original 24 patterns to include 5 new Academic-Specific patterns (Citation Preservation, Technical Terms, Hedging, Passive Voice, Discipline Conventions).
-- **📝 9-Step Rigorous Process:** Uses a strict multi-step pipeline including Context Detection, Pattern Identification, Quality Checks, Self-Auditing ("Anti-AI Pass"), and a Final Tone Consistency Check.
-- **🗣️ Multi-Lingual Tone Auditing:** Features integrated internal tone-checking prompts (using conversational elements like *"Kya yeh abhi bhi formal tone mein hai?"*) to ensure the AI rigorously double-checks its own output character.
+### 🎓 Academic Core
+- **Specialized Rules:** Preserves citations (APA, MLA, etc.), technical terminology, and legitimate hedging.
+- **Discipline-Specific:** Supports conventions for Sciences (Passive), Humanities (Reflective), and Business (Active).
+- **Integrity Shield:** Strictly prohibits the generation of fake citations or hallucinated sources.
+
+### 🧠 Personality & Soul
+- **Burstiness Control:** Manually varies sentence length (Mix of ≤10 and ≥25 words) to bypass statistical detectors.
+- **Rhythmic Variation:** Teaches AI to avoid repetitive "AI-typical" structures.
+- **Context-Aware:** Switches between "Professional Soul" (Logic-focused) and "Casual Soul" (Personality-focused).
+
+### 🔍 Detection & Quality
+- **29 AI Patterns:** Scans for "pivotal", "delve", "testament", and 26 other common AI tells.
+- **Semantic Anchor Check:** Ensures logical paragraph connectivity to prevent topic drift.
+- **Multi-Lingual Auditing:** Internal prompts double-check tone consistency in real-time.
 
 ---
 
-## 🛠️ How It Works
+## 🛠️ The Humanization Pipeline
 
-The Academic Humanizer doesn't just rewrite text blindly. It follows a highly systematic approach:
-1. **Context Detection:** Analyzes if the text is Academic, Business, Casual, or Creative to apply the correct ruleset.
-2. **Pattern Stripping:** Scans for 29 known AI tells (e.g., "delve", "pivotal", em-dash overuse, shiny promotional words, outline-like structures).
-3. **Drafting:** Rewrites the text focusing on natural transitions and copula verbs ("is/are").
-4. **Self-Audit:** The skill prompts itself to find what still looks AI-generated and does a second revision.
-5. **Final Sanity Check:** Ensures the tone hasn't become inappropriately casual for an academic setting.
+The Academic Humanizer follows a highly systematic **9-Step Process** to ensure quality and bypass detection:
+
+```mermaid
+graph TD
+    A[Context Detection] --> B[Pattern Identification]
+    B --> C[Drafting & Rewrite]
+    C --> D[Burstiness & Perplexity Pass]
+    D --> E[Quality Check]
+    E --> F[Self-Audit / Anti-AI Pass]
+    F --> G[Final Revision]
+    G --> H[Final Tone Check]
+    H --> I[Final Humanized Output]
+```
+
+---
+
+## 📝 Pattern Comparison
+
+| AI Pattern | Humanized Alternative | Why? |
+|:---|:---|:---|
+| *"It marks a pivotal moment..."* | *"This change is important because..."* | Avoids inflated symbolism. |
+| *"Delving into the landscape..."* | *"When examining current research..."* | Replaces overused AI vocabulary. |
+| *"Challenges and prospects..."* | *"Traffic increased due to X..."* | Specificity beats vague outlines. |
+| *"In order to achieve..."* | *"To achieve..."* | Removes "AI fluff" filler phrases. |
 
 ---
 
@@ -33,8 +64,23 @@ The Academic Humanizer doesn't just rewrite text blindly. It follows a highly sy
 To use this skill locally in your AI CLI or agent environments (like Claude Code):
 
 1. **Download the file:** Simply download the `SKILL.md` file from this repository.
-2. **Place it in your workspace:** Move `SKILL.md` into your project's skills directory or provide it as a system prompt to your preferred LLM.
-3. **Invoke:** Ask your AI assistant to "humanize this text" or "review this essay according to the Academic Humanizer skill."
+2. **Place it in your workspace:** Move `SKILL.md` into your project's skills directory.
+3. **Invoke:** 
+   ```bash
+   /academic-humanizer "Paste your text here"
+   ```
+   *Or prompt:* "Review this essay according to the Academic Humanizer skill."
+
+---
+
+## 📜 Update History
+
+### v1.1.0 - Anti-Detection & Integrity Update
+- **🚀 Burstiness Engine:** Mandatory sentence length variation for detector evasion.
+- **🛡️ Integrity Shield:** "No Fake Citations" rule implemented.
+- **📏 Word Count Engine:** ±10% preservation for assignment compliance.
+- **⚙️ Technical Compatibility:** Renamed to `academic-humanizer` for Claude consistency.
+- **🔗 Semantic Anchor:** Logical flow verification between paragraphs.
 
 ---
 
@@ -42,36 +88,20 @@ To use this skill locally in your AI CLI or agent environments (like Claude Code
 
 No humanizer tool can guarantee a 100% bypass of AI detectors (like GPTZero, Turnitin, or Originality.ai). 
 - **Detectors Evolve:** What bypasses them today might get flagged tomorrow.
-- **False Positives:** Human writing (especially formal academic writing and non-native English) is frequently flagged as AI.
-- **Best Practice:** Use this tool as an *assistant*, not a replacement for your own work. Always add your own research, maintain your unique voice, and review the output line-by-line before submission to ensure it aligns with your institution's academic integrity policies.
+- **False Positives:** Human writing is frequently flagged as AI.
+- **Best Practice:** Use this tool as an *assistant*, not a replacement. Always add your unique voice and review outputs for institutional policy alignment.
 
 ---
 
 ## 🌟 Acknowledgements & Credits
-> **Base Project:** This project was originally built upon the open-source **[blader/humanizer](https://github.com/blader/humanizer)** repository, which is licensed under the MIT License. A huge thanks to the original creator for building the foundational patterns based on Wikipedia's "Signs of AI writing" guide. 
+> **Base Project:** Originally built upon **[blader/humanizer](https://github.com/blader/humanizer)** (MIT License). Based on Wikipedia's "Signs of AI writing" guide.
 > 
-> **Modifications:** I (Nadeem) have downloaded the base `SKILL.md` and significantly expanded it by adding new academic-focused roles, step-by-step processing pipelines, specific rules for essays/thesis, and comprehensive tone-checking mechanisms tailored to my unique workflow and requirements.
-
----
-
----
-
-## 📜 Update History
-
-### v1.1.0 (March 2024) - Anti-Detection & Integrity Update
-- **🚀 Advanced Anti-Detection (Burstiness):** Implemented mandatory sentence length variation (Short ≤10, Long ≥25) to increase perplexity and bypass statistical AI detectors.
-- **🛡️ Strict Integrity Shield:** Added a "No Fake Citations" rule to prevent the AI from inventing sources—crucial for academic safety.
-- **📏 Word Count Engine:** Introduced a ±10% word count preservation rule to ensure assignments meet strict length requirements.
-- **🔗 Semantic Anchor Check:** New logic to ensure logical flow between paragraphs, preventing "AI drift."
-- **⚙️ Technical Compatibility:** Standardized skill name to `academic-humanizer` (kebab-case) for full compatibility with Claude and other agentic environments.
-- **📝 Academic "Mess" Refinement:** Clarified the difference between safe stylistic variation and forbidden grammatical errors.
+> **Modifications:** Significantly expanded by **Nadeem** with academic pipelines, burstiness controls, and tone-checking mechanisms tailored for professional requirements.
 
 ---
 
 ## 👨‍💻 About the Author
-
 Modified and maintained by **Nadeem**.
+*   **GitHub:** [@nadeem12q](https://github.com/nadeem12q)
 
-* **GitHub:** [@nadeem12q](https://github.com/nadeem12q)
-
-***Disclaimer:** Use this tool responsibly. It is designed to improve the flow, readability, and natural tone of AI-assisted drafting, not to facilitate academic misconduct.*
+***Disclaimer:** Use this tool responsibly to improve readability and natural tone, not to facilitate academic misconduct.*
