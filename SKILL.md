@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 2.1.1 (Detection Hotfix)
+version: 2.1.2 (Formatting Fix)
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -816,6 +816,8 @@ Deliver the final humanized version with all quality checks completed.
 
 
 ## Output Format
+
+🚨 **STRICT FORMATTING RULE:** Provide the text **directly in the chat or completion response**. Do NOT generate, save, or propose creating `.docx`, `.txt`, `.pdf`, or any other file types unless explicitly requested by the user.
 
 Provide the following in your response:
 

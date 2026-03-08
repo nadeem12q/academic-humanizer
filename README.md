@@ -1,7 +1,7 @@
 # Academic Humanizer 🎓
 > *Elevating AI Drafts to Academic Excellence with Integrity*
 
-[![Version](https://img.shields.io/badge/version-2.1.1-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.1.2-blue.svg)](file:///d:/1_CodeBsae/academic%20humanizer/SKILL.md)
 [![Category](https://img.shields.io/badge/category-Writing--Utility-green.svg)]()
 [![Focus](https://img.shields.io/badge/focus-Academic--Only-red.svg)]()
 
@@ -87,6 +87,9 @@ To use this skill locally in your AI CLI or agent environments (like Claude Code
 ---
 
 ## 📜 Update History
+
+### v2.1.2 - Formatting Fix
+- **📄 No File Generation:** Added strict instruction to provide humanized text exclusively in the chat, preventing the AI from creating unnecessary `.docx` or `.txt` files.
 
 ### v2.1.1 - Detection Hotfix
 - **🚨 Anti-Regression Rules:** Added strict negative constraints to Deep Rewrite Mode to prevent LLMs from reverting to default AI essay structures (Rule of Three, Appositives, Generic Intros).
