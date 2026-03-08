@@ -54,6 +54,20 @@ No humanizer tool can guarantee a 100% bypass of AI detectors (like GPTZero, Tur
 
 ---
 
+---
+
+## 📜 Update History
+
+### v1.1.0 (March 2024) - Anti-Detection & Integrity Update
+- **🚀 Advanced Anti-Detection (Burstiness):** Implemented mandatory sentence length variation (Short ≤10, Long ≥25) to increase perplexity and bypass statistical AI detectors.
+- **🛡️ Strict Integrity Shield:** Added a "No Fake Citations" rule to prevent the AI from inventing sources—crucial for academic safety.
+- **📏 Word Count Engine:** Introduced a ±10% word count preservation rule to ensure assignments meet strict length requirements.
+- **🔗 Semantic Anchor Check:** New logic to ensure logical flow between paragraphs, preventing "AI drift."
+- **⚙️ Technical Compatibility:** Standardized skill name to `academic-humanizer` (kebab-case) for full compatibility with Claude and other agentic environments.
+- **📝 Academic "Mess" Refinement:** Clarified the difference between safe stylistic variation and forbidden grammatical errors.
+
+---
+
 ## 👨‍💻 About the Author
 
 Modified and maintained by **Nadeem**.

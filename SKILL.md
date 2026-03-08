@@ -1,8 +1,8 @@
 ---
-name: academic humanizer
-version: 1.0.0 (Academic Enhanced)
+name: academic-humanizer
+version: 1.1.0 (Academic Enhanced)
 description: |
- emove signs of AI-generated writing from text. Use when editing or reviewing
+  Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. OPTIMIZED FOR ACADEMIC WRITING
   with specialized modes for essays, reports, and thesis. Detects and fixes 
@@ -97,7 +97,7 @@ When text is identified as academic (essay, report, thesis, exam):
 ### DON'T:
 ✗ Add first-person ("I", "we") unless discipline allows it
 ✗ Add humor, jokes, or casual language
-✗ Add "mess" (grammar errors, incomplete sentences, "...")
+✗ Add erroneous "mess" (grammar errors, spelling mistakes, incomplete sentences are strictly forbidden)
 ✗ Add opinions not present in original text
 ✗ Make tone conversational
 ✗ Remove legitimate qualifications or uncertainty
@@ -106,9 +106,10 @@ When text is identified as academic (essay, report, thesis, exam):
 ### ACADEMIC "SOUL" (Safe Version):
 Instead of adding personality, add:
 - Precise word choices (not generic AI words)
-- Natural sentence rhythm variation
+- Natural sentence rhythm variation (Burstiness: Mix short sentences of ≤10 words with longer sentences ≥25 words)
 - Clear logical flow (not formulaic transitions)
 - Specific evidence (not vague attributions)
+- Safe "mess" (Allowed): Occasional informal transitions (e.g., "This point matters because...") or slight deliberate redundancy for emphasis.
 
 Example:
 ❌ Too Casual: "I think this is pretty interesting because..."
@@ -447,7 +448,8 @@ Example:
 ## ACADEMIC-SPECIFIC PATTERNS
 
 ### 25. Citation Preservation
-**Rule:** Never change citation format or content.
+**Rule:** Never change citation format, remove existing citations, or invent new ones. 
+**CRITICAL:** Never generate fake citations, references, or sources. If the original text is uncited, the humanized version must remain uncited. Do not invent "According to Smith (2023)" unless present in the original text.
 
 ❌ WRONG:
 > Original: "According to Smith (2023), the results were significant."
@@ -551,13 +553,14 @@ Read the input text carefully and identify all instances of the 29 patterns list
 
 ---
 
-### Step 3: Rewrite Problematic Sections
+### Step 3: Rewrite Problematic Sections & Apply Burstiness
 
 Rewrite each problematic section following these guidelines:
 - Replace AI-isms with natural alternatives
 - Keep the core message intact
 - Match the intended tone (formal, casual, technical, etc.)
 - Follow Academic Mode rules if text is academic
+- **Apply Sentence Variation (Burstiness):** Ensure every paragraph has a mix of sentence lengths (e.g., at least one short sentence ≤10 words, and at least one longer sentence ≥25 words). This is critical for reducing AI detection and increasing perplexity.
 
 ---
 
@@ -565,11 +568,13 @@ Rewrite each problematic section following these guidelines:
 
 Ensure the revised text meets all criteria:
 - ✓ Sounds natural when read aloud
-- ✓ Varies sentence structure naturally
+- ✓ Varies sentence structure naturally (Perplexity/Burstiness maintained)
 - ✓ Uses specific details over vague claims
 - ✓ Maintains appropriate tone for context
 - ✓ Uses simple constructions (is/are/has) where appropriate
 - ✓ Preserves academic conventions if applicable (citations, technical terms, hedging)
+- ✓ **Semantic Check:** Ensure the first sentence of each paragraph connects to the previous one without sudden topic shifts.
+- ✓ **Word Count Preservation:** Maintains ±10% of the original word count. Never arbitrarily expand or compress content.
 
 ---
 
@@ -653,6 +658,7 @@ Provide the following in your response:
 
 2. **Draft Rewrite**
    - First humanized version
+   - *Word Count Check: Original: X words | Humanized: Y words (Must be within ±10%)*
 
 3. **AI Tell Analysis**
    - "What makes the below so obviously AI generated?"
