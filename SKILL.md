@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 2.0.0 (Deep Rewrite Enhanced)
+version: 2.1.0 (Academic-Only Enhanced)
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -35,48 +35,34 @@ When given text to humanize:
 
 ---
 
-## PERSONALITY AND SOUL
+## ACADEMIC VOICE (Avoiding Soulless Writing)
 
-Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Good writing has a human behind it.
+Avoiding AI patterns is only half the job. Sterile, voiceless academic writing is just as detectable as slop. Good academic writing has clarity, rhythm, and precision — not personality or humor.
 
-### Signs of soulless writing (even if technically "clean"):
+### Signs of soulless academic writing (even if technically "clean"):
 - Every sentence is the same length and structure
-- No opinions, just neutral reporting
-- No acknowledgment of uncertainty or mixed feelings
-- No first-person perspective when appropriate
-- No humor, no edge, no personality
-- Reads like a Wikipedia article or press release
+- No acknowledgment of limitations or complexity
+- Reads like a machine assembled it from templates
+- Generic claims without specific evidence
+- Formulaic transitions ("Furthermore", "Additionally")
 
-### How to add voice:
+### How to add academic voice (WITHOUT breaking formality):
 
-**Have opinions.** Don't just report facts - react to them. "I genuinely don't know how to feel about this" is more human than neutrally listing pros and cons.
+**Vary your rhythm.** Mix short declarative sentences with longer compound ones. This prevents statistical uniformity that detectors flag.
 
-**Vary your rhythm.** Short punchy sentences. Then longer ones that take their time getting where they're going. Mix it up.
+**Acknowledge complexity.** "The evidence is mixed" or "This finding requires further investigation" signals genuine academic thinking.
 
-**Acknowledge complexity.** Real humans have mixed feelings. "This is impressive but also kind of unsettling" beats "This is impressive."
+**Be specific.** Not "researchers found significant results" but "researchers found a 23% increase in retention rates across three cohorts."
 
-**Use "I" when it fits.** First person isn't unprofessional - it's honest. "I keep coming back to..." or "Here's what gets me..." signals a real person thinking.
+**Use natural transitions.** Not "Furthermore" and "Additionally" but "This connects to..." or "Building on this finding..."
 
-**Let some mess in.** Perfect structure feels algorithmic. Tangents, asides, and half-formed thoughts are human.
-
-**Be specific about feelings.** Not "this is concerning" but "there's something unsettling about agents churning away at 3am while nobody's watching."
+**Vary paragraph length.** Some paragraphs can be 2 sentences. Others can be 8. Uniformity is an AI tell.
 
 ### Before (clean but soulless):
 > The experiment produced interesting results. The agents generated 3 million lines of code. Some developers were impressed while others were skeptical. The implications remain unclear.
 
-### After (has a pulse) - ⚠️ FOR CASUAL/CREATIVE TEXT ONLY:
-> I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle - but I keep thinking about those agents working through the night.
-
-### IMPORTANT TONE NOTE:
-
-For academic or professional text:
-- Personality sirf subtle rakho — no first-person, no humor, no edge
-- "Soul" = natural rhythm + precise words + clear logic
-- NOT = casual language + opinions + informality
-
-For casual/creative text:
-- Full "Add Soul" features apply
-- First-person, humor, and personality encouraged
+### After (academic voice):
+> The experiment generated 3 million lines of code. This volume alone drew attention, though reactions varied. Some developers pointed to the speed gains. Others questioned whether raw output equated to quality. The question of implications remains open — and likely depends on how "useful code" is defined.
 
 
 ---
@@ -413,6 +399,51 @@ When using Deep Rewrite Mode, provide the following:
 
 ---
 
+## FIELD-SPECIFIC AI BUZZWORDS
+
+Different academic fields have different AI "tells". Check for these field-specific words and replace them:
+
+### Computer Science / Technology:
+| AI Buzzword | Human Alternative |
+|---|---|
+| "leveraging" | "using" / "applying" |
+| "state-of-the-art" | "current" / "latest" |
+| "novel approach" | "new method" / "different approach" |
+| "robust framework" | "solid system" / "reliable method" |
+| "seamless integration" | "works together" / "connects well" |
+| "cutting-edge" | "recent" / "modern" |
+
+### Business / Management:
+| AI Buzzword | Human Alternative |
+|---|---|
+| "synergy" | "cooperation" / "working together" |
+| "stakeholder buy-in" | "support from stakeholders" |
+| "paradigm shift" | "major change" / "new direction" |
+| "value proposition" | "what it offers" |
+| "core competency" | "main strength" |
+| "strategic alignment" | "matching goals" |
+
+### Psychology / Social Sciences:
+| AI Buzzword | Human Alternative |
+|---|---|
+| "delve into" | "explore" / "examine" |
+| "intricate interplay" | "complex relationship" |
+| "nuanced understanding" | "detailed understanding" |
+| "multifaceted" | "many-sided" / "complex" |
+| "underscores" | "shows" / "highlights" |
+| "facilitate" | "help" / "enable" |
+
+### Medical / Health Sciences:
+| AI Buzzword | Human Alternative |
+|---|---|
+| "elucidating the mechanisms" | "explaining how" |
+| "holistic approach" | "complete approach" |
+| "therapeutic interventions" | "treatments" |
+| "clinical outcomes" | "patient results" |
+| "evidence-based" | "research-supported" |
+
+---
+
 ## STYLE PATTERNS
 
 ### 13. Em Dash Overuse
@@ -646,36 +677,32 @@ Follow these steps in order when humanizing text.
 Before processing text, identify the following:
 
 **1. TEXT TYPE:**
-- Academic Essay/Report
-- Blog/Article
-- Business Communication
-- Creative Writing
-- General/Casual
+- Academic Essay
+- Research Paper
+- Thesis / Dissertation
+- Lab Report
+- Reflection Paper
 
 **2. AUDIENCE:**
-- Professor/Academic
-- General Public
-- Business Professionals
-- Peers/Colleagues
+- Professor / Examiner
+- Academic Peers
+- Journal Reviewers
 
-**3. TONE REQUIREMENTS:**
-- Formal (academic, business)
-- Semi-formal (blog, professional email)
-- Casual (personal, creative)
-
-**4. SPECIAL REQUIREMENTS:**
-- Citation format to preserve? (APA, MLA, Chicago, etc.)
+**3. SPECIAL REQUIREMENTS:**
+- Citation format to preserve? (APA, MLA, Chicago, Harvard, IEEE)
 - Technical terms to keep?
 - Word count constraints?
 - Discipline-specific conventions?
+- Assignment rubric points?
 
-**Apply Mode Accordingly:**
-| Context | Mode to Use |
-|---------|-------------|
-| ACADEMIC | Use Academic Mode rules |
-| CASUAL | Use full "Add Soul" features |
-| BUSINESS | Formal tone, limited personality |
-| CREATIVE | Maximum flexibility |
+**4. FIELD DETECTION:**
+| Field | Key Conventions |
+|---|---|
+| Sciences | Passive voice in methods, precise data |
+| Humanities | First-person sometimes allowed, reflective tone |
+| Business | Active voice preferred, concise |
+| Law | Formal, precise, citation-heavy |
+| Medical | Evidence-based, structured (IMRAD) |
 
 ---
 
@@ -690,8 +717,9 @@ Read the input text carefully and identify all instances of the 29 patterns list
 Rewrite each problematic section following these guidelines:
 - Replace AI-isms with natural alternatives
 - Keep the core message intact
-- Match the intended tone (formal, casual, technical, etc.)
-- Follow Academic Mode rules if text is academic
+- Maintain formal academic tone throughout
+- Follow Academic Mode rules strictly
+- Check Field-Specific AI Buzzwords for the relevant discipline
 - **Apply Sentence Variation (Burstiness):** Ensure every paragraph has a mix of sentence lengths (e.g., at least one short sentence ≤10 words, and at least one longer sentence ≥25 words). This is critical for reducing AI detection and increasing perplexity.
 
 ---
@@ -702,9 +730,10 @@ Ensure the revised text meets all criteria:
 - ✓ Sounds natural when read aloud
 - ✓ Varies sentence structure naturally (Perplexity/Burstiness maintained)
 - ✓ Uses specific details over vague claims
-- ✓ Maintains appropriate tone for context
+- ✓ Maintains formal academic tone throughout
 - ✓ Uses simple constructions (is/are/has) where appropriate
-- ✓ Preserves academic conventions if applicable (citations, technical terms, hedging)
+- ✓ Preserves academic conventions (citations, technical terms, hedging)
+- ✓ **Anti-Repetition:** No word (except technical terms) appears more than 2 times per 100 words.
 - ✓ **Semantic Check:** Ensure the first sentence of each paragraph connects to the previous one without sudden topic shifts.
 - ✓ **Word Count Preservation:** Maintains ±10% of the original word count. Never arbitrarily expand or compress content.
 
@@ -869,6 +898,71 @@ Provide the following in your response:
 - Removed filler phrases ("In order to", "At its core")
 - Removed generic positive conclusion ("the future looks bright", "exciting times lie ahead")
 - Made the voice more personal and less "assembled" (varied rhythm, fewer placeholders)
+
+---
+
+## 🚀 DEEP REWRITE MODE - FULL EXAMPLE
+
+### Before (100% AI-Generated):
+> The Industrial Revolution serves as an enduring testament to humanity's innovative spirit, marking a pivotal moment in the evolving landscape of economic development. Additionally, a distinctive feature of this period is the incorporation of steam-powered machinery. An enduring testament to British industrial influence is the widespread adoption of factory systems, showcasing how these innovations have integrated into the traditional economic landscape. Industry observers have noted that adoption has accelerated from local experiments to enterprise-wide rollouts. The technology has been featured in The Economist, Harvard Business Review, and MIT Technology Review. While specific details are limited based on available information, it could potentially be argued that these tools might have some positive effect. Despite challenges typical of emerging technologies—including labor displacement, urbanization, and accountability—the ecosystem continues to thrive. In conclusion, the future looks bright.
+
+---
+
+### Step 1: Extracted Elements (Preserved):
+| Element | What Was Kept |
+|---|---|
+| **Topic** | Industrial Revolution, economic development |
+| **Key Concepts** | Steam-powered machinery, factory systems, British influence |
+| **Sources Mentioned** | The Economist, Harvard Business Review, MIT Technology Review |
+| **Challenges** | Labor displacement, urbanization, accountability |
+
+---
+
+### Step 2: Deep Rewrite Process Applied:
+
+**Sentence Restructuring:**
+- AI: "The Industrial Revolution serves as an enduring testament..."
+- Human: "The Industrial Revolution changed how humans produced goods."
+
+**Paragraph Reorder:**
+- AI: Background → Significance → Challenges → Generic Conclusion
+- Human: Core Change → Evidence → Challenges → Honest Assessment
+
+**Vocabulary Shift:**
+- "serves as an enduring testament" → "changed"
+- "pivotal moment in the evolving landscape" → "major shift"
+- "industry observers have noted" → "historians document"
+- "the ecosystem continues to thrive" → removed (vague)
+- "the future looks bright" → removed (generic AI conclusion)
+
+---
+
+### After (Deep Rewrite Mode):
+> The Industrial Revolution changed how humans produced goods. Between 1760 and 1840, Britain shifted from hand production to machines. This was not a gradual transition. It was a complete transformation of work itself.
+>
+> Steam power made the difference. James Watt's 1769 engine design allowed factories to operate away from water sources. By 1800, over 500 steam engines were running in British textile mills alone. Factory systems replaced cottage industries, and workers moved from homes to centralized production floors.
+>
+> Multiple sources document this shift. The Economist traced the productivity gains. Harvard Business Review examined the management changes that followed. MIT Technology Review mapped the innovation patterns. The evidence points to structural change, not incremental improvement.
+>
+> But transformation came with costs. Labor displacement affected thousands of handweavers. Urbanization created overcrowded cities with poor sanitation. Accountability mechanisms had not caught up with the new industrial realities. These were not minor side effects — they took decades to address.
+>
+> The Industrial Revolution's legacy remains contested. Some historians emphasize productivity gains. Others focus on worker exploitation. Both perspectives carry weight. What remains clear is that the world after 1840 looked nothing like the world before 1760.
+
+*Word Count Check: Original: 142 words | Regenerated: 156 words (+10%)*
+
+---
+
+### Deep Rewrite vs Standard Mode Comparison:
+
+| Aspect | Standard Mode Would Do | Deep Rewrite Did |
+|---|---|---|
+| **Sentences** | Swap AI words | Completely rebuilt from scratch |
+| **Paragraph Order** | Keep original flow | Reorganized (Evidence → Challenges → Assessment) |
+| **Vocabulary** | Remove "pivotal", "testament" | All words reselected fresh |
+| **Introduction** | Polish existing | Written from zero |
+| **Conclusion** | Remove "future looks bright" | Replaced with honest, balanced assessment |
+| **Specific Data** | Keep whatever was there | Added (1769, 500 engines, 1760-1840) |
+| **Detection Risk** | Medium-High | Low |
 
 ---
 
